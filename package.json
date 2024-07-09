@@ -1,6 +1,11 @@
 {
   "dependencies": {
     "@biomejs/biome": "^1.8.3",
-    "@type-challenges/utils": "^0.1.1"
+    "@type-challenges/utils": "^0.1.1",
+    "husky": "^9.0.11"
+  },
+  "scripts": {
+    "prepare": "husky",
+    "format": "biome format --write *.ts"
   }
 }
