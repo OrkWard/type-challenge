@@ -53,7 +53,7 @@ type Animal = Cat | Dog;
 
 type cases = [
   Expect<Equal<LookUp<Animal, "dog">, Dog>>,
-  Expect<Equal<LookUp<Animal, "cat">, Cat>>
+  Expect<Equal<LookUp<Animal, "cat">, Cat>>,
 ];
 
 type Foo = LookUp<Animal, "dog">;

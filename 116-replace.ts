@@ -18,19 +18,27 @@
 
 /* _____________ Your Code Here _____________ */
 
-type Replace<S extends string, From extends string, To extends string> = '' extends From ? S : S extends `${infer h}${From}${infer t}` ? `${h}${To}${t}` : S;
+type Replace<
+  S extends string,
+  From extends string,
+  To extends string,
+> = "" extends From
+  ? S
+  : S extends `${infer h}${From}${infer t}`
+    ? `${h}${To}${t}`
+    : S;
 
 /* _____________ Test Cases _____________ */
-import type { Equal, Expect } from '@type-challenges/utils'
+import type { Equal, Expect } from "@type-challenges/utils";
 
 type cases = [
-  Expect<Equal<Replace<'foobar', 'bar', 'foo'>, 'foofoo'>>,
-  Expect<Equal<Replace<'foobarbar', 'bar', 'foo'>, 'foofoobar'>>,
-  Expect<Equal<Replace<'foobarbar', '', 'foo'>, 'foobarbar'>>,
-  Expect<Equal<Replace<'foobarbar', 'bar', ''>, 'foobar'>>,
-  Expect<Equal<Replace<'foobarbar', 'bra', 'foo'>, 'foobarbar'>>,
-  Expect<Equal<Replace<'', '', ''>, ''>>,
-]
+  Expect<Equal<Replace<"foobar", "bar", "foo">, "foofoo">>,
+  Expect<Equal<Replace<"foobarbar", "bar", "foo">, "foofoobar">>,
+  Expect<Equal<Replace<"foobarbar", "", "foo">, "foobarbar">>,
+  Expect<Equal<Replace<"foobarbar", "bar", "">, "foobar">>,
+  Expect<Equal<Replace<"foobarbar", "bra", "foo">, "foobarbar">>,
+  Expect<Equal<Replace<"", "", "">, "">>,
+];
 
 /* _____________ Further Steps _____________ */
 /*
@@ -38,4 +46,3 @@ type cases = [
   > View solutions: https://tsch.js.org/116/solutions
   > More Challenges: https://tsch.js.org
 */
-

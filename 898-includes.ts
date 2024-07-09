@@ -4,7 +4,7 @@ import type { Equal, Expect } from "@type-challenges/utils";
 
 type Includes<T extends readonly any[], U> = T extends [
   infer First,
-  ...infer Rest
+  ...infer Rest,
 ]
   ? Equal<First, U> extends true
     ? true
@@ -32,5 +32,5 @@ type cases = [
   Expect<Equal<Includes<[1], 1 | 2>, false>>,
   Expect<Equal<Includes<[1 | 2], 1>, false>>,
   Expect<Equal<Includes<[null], undefined>, false>>,
-  Expect<Equal<Includes<[undefined], null>, false>>
+  Expect<Equal<Includes<[undefined], null>, false>>,
 ];

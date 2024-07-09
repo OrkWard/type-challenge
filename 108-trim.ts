@@ -22,8 +22,8 @@ type Space = " " | "\t" | "\n";
 type Trim<S extends string> = S extends `${Space}${infer R}`
   ? Trim<R>
   : S extends `${infer P}${Space}`
-  ? Trim<P>
-  : S;
+    ? Trim<P>
+    : S;
 
 /* _____________ Test Cases _____________ */
 import type { Equal, Expect } from "@type-challenges/utils";
@@ -36,7 +36,7 @@ type cases = [
   Expect<Equal<Trim<"     str     ">, "str">>,
   Expect<Equal<Trim<"   \n\t foo bar \t">, "foo bar">>,
   Expect<Equal<Trim<"">, "">>,
-  Expect<Equal<Trim<" \n\t ">, "">>
+  Expect<Equal<Trim<" \n\t ">, "">>,
 ];
 
 /* _____________ Further Steps _____________ */

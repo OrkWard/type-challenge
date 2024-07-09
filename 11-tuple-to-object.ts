@@ -38,7 +38,7 @@ type cases = [
       TupleToObject<typeof tupleMix>,
       { 1: 1; "2": "2"; 3: 3; "4": "4"; [sym1]: typeof sym1 }
     >
-  >
+  >,
 ];
 
 // @ts-expect-error

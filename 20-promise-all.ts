@@ -1,7 +1,7 @@
 /* _____________ Your Code Here _____________ */
 
 declare function PromiseAll<T extends any[]>(
-  values: [...T]
+  values: [...T],
 ): Promise<{ [K in keyof T]: Awaited<T[K]> }>;
 
 /* _____________ Test Cases _____________ */
@@ -16,5 +16,5 @@ type cases = [
   Expect<Equal<typeof promiseAllTest1, Promise<[1, 2, 3]>>>,
   Expect<Equal<typeof promiseAllTest2, Promise<[1, 2, number]>>>,
   Expect<Equal<typeof promiseAllTest3, Promise<[number, number, number]>>>,
-  Expect<Equal<typeof promiseAllTest4, Promise<number[]>>>
+  Expect<Equal<typeof promiseAllTest4, Promise<number[]>>>,
 ];

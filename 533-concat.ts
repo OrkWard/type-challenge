@@ -2,7 +2,7 @@
 
 type Concat<T extends readonly unknown[], U extends readonly unknown[]> = [
   ...T,
-  ...U
+  ...U,
 ];
 
 /* _____________ Test Cases _____________ */
@@ -22,7 +22,7 @@ type cases = [
       Concat<["1", 2, "3"], [false, boolean, "4"]>,
       ["1", 2, "3", false, boolean, "4"]
     >
-  >
+  >,
 ];
 
 // @ts-expect-error

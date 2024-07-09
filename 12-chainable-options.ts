@@ -3,7 +3,7 @@
 type Chainable<T = object> = {
   option<Key extends string, Value>(
     key: Key extends keyof T ? never : Key,
-    value: Value
+    value: Value,
   ): Chainable<Omit<T, Key> & Record<Key, Value>>;
   get(): T;
 };
@@ -34,7 +34,7 @@ const result3 = a
 type cases = [
   Expect<Alike<typeof result1, Expected1>>,
   Expect<Alike<typeof result2, Expected2>>,
-  Expect<Alike<typeof result3, Expected3>>
+  Expect<Alike<typeof result3, Expected3>>,
 ];
 
 type Expected1 = {
